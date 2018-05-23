@@ -1,0 +1,20 @@
+mixin nav(link,title)
+	li.tabs__item
+		a(href=link).tabs__link=title
+
+.output-info__top
+	.output-info__tabs
+		.tabs
+			.tabs__wrp
+				.tabs__title Базы данных :
+				ul.tabs__list
+					+nav('href=#','Записи')
+					+nav('href=#','Атрибуты')
+					+nav('href=#','Словари')
+					+nav('href=#','Выборки')
+	.output-info__user
+		.user
+			.user__wrp
+				.user__name Иннокентий Виссарионович
+				.user__icon
+					i(class="fa fa-sign-out" aria-hidden="true")

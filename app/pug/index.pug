@@ -1,0 +1,177 @@
+doctype html
+html(lang = 'ru-RU')
+	head
+		title 
+		link(rel="stylesheet" href="css/font-awesome.css")
+		link(rel="stylesheet" href="css/main.css")
+		link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+		
+	body
+		section.main
+			.container
+				.main__wrapper
+					.main__aside
+						.aside
+							.aside__logo
+								.logo
+									.logo__title Logotype
+							.aside__category
+								.category
+									mixin list(titleLong,titleShort,addClass) 
+										li.elem__item
+											a.elem__link(href="#")
+												span.elem__text=titleLong
+												span.elem__text.elem__text_short=titleShort
+
+									ul.category__list
+										li.category__elem 
+											.elem.elem_mail
+												.elem__description 
+													.elem__icon
+														i(class="fa fa-envelope" aria-hidden="true")
+													p.elem__title Корреспонденция
+												ul.elem__list
+													li.elem__item.elem__item_mod
+														a.elem__link(href="#")
+															span.elem__text Входящие
+														.elem__labels 
+															span.elem__msg.elem__msg_out
+																span.elem__marker-text 6
+															span.elem__msg.elem__msg_inp
+																span.elem__marker-text 2												
+													li.elem__item.elem__item_mod
+														a.elem__link(href="#")
+															span.elem__text Исходящие
+															
+														.elem__labels
+															span.elem__msg.elem__msg_out
+																span.elem__marker-text 1
+													li.elem__item
+														a.elem__link(href="#")
+															span.elem__text Черновики
+															span.elem__text.elem__text_short ЧЕ
+										
+										li.category__elem
+											.elem.elem_project
+												.elem__description 
+													.elem__icon
+														i(class="fa fa-briefcase" aria-hidden="true")
+													p.elem__title Проекты
+												ul.elem__list
+													+list('Список', 'Сп')
+													+list('Шаблоны отчетов', 'Ш')
+													+list('Конструктор отчетов', 'КО')
+
+										li.category__elem 
+											.elem.elem_tree
+													.elem__description 
+														.elem__icon
+															i(class="fa fa-sitemap" aria-hidden="true")
+														p.elem__title Иерархия
+
+										li.category__elem
+											.elem.elem_data-base
+												.elem__description 
+													.elem__icon
+														i(class="fa fa-database" aria-hidden="true")
+													p.elem__title Базы данных
+												ul.elem__list
+													+list('Записи', 'ЗА')
+													li.elem__item.elem__item_active
+														a.elem__link(href="#") 
+															span.elem__text Атрибуты
+															span.elem__text.elem__text_short.open АТ
+													+list('Выборки', 'ВЫ')
+
+										li.category__elem
+											.elem.elem_user 
+												.elem__description 
+													.elem__icon
+														i(class="fa fa-users" aria-hidden="true")
+													p.elem__title Пользователи
+												ul.elem__list
+													+list('Активные', 'АК')
+													+list('Архив', 'АР')
+													+list('Отчеты', 'ОТ')
+													+list('Логи', 'ЛО')
+
+										li.category__elem
+											.elem.elem_analytics 
+												.elem__description 
+													.elem__icon
+														i(class="fa fa-bar-chart" aria-hidden="true")
+													p.elem__title Аналитика
+												ul.elem__list
+													+list('Статистика', 'СТ')
+													+list('Шаблоны отчетов', 'ШО')
+													+list('Конструктор отчетов', 'КО')
+
+					.main__output-info
+						.output-info
+							
+							include tabs.pug
+
+							.output-info__content
+								.output-info__tools
+									.tools
+										.tools__wrp
+											.tools__search
+												.search
+													form.search__form(action="#")
+														input.search__input(type="text")
+														.search__icon
+															i(class="fa fa-search" aria-hidden="true")
+											.tools__btn-group
+												button.tools__btn Создать группу атрибутов
+												button.tools__btn.tools__btn_mod Создать атрибут
+
+								include output.pug
+
+								
+																																
+
+								  
+
+								 
+								
+
+
+
+
+
+
+
+
+																	
+
+									
+											 				 					
+														 						
+												
+										 
+									 	
+													
+											 			
+														
+																
+											
+										 							
+																
+																	
+																
+											
+
+
+															
+
+
+	
+
+
+
+
+
+
+		
+			
+			
