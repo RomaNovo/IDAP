@@ -11,12 +11,12 @@ html(lang = 'ru-RU')
 			.container
 				.main__wrapper
 					.main__aside
-						.aside
+						.aside.aside_main
 							.aside__logo
-								.logo
+								.logo.logo_aside
 									.logo__title Logotype
 							.aside__category
-								.category
+								.category.category_aside
 									mixin list(titleLong,titleShort,addClass) 
 										li.elem__item
 											a.elem__link(href="#")
@@ -25,7 +25,7 @@ html(lang = 'ru-RU')
 
 									ul.category__list
 										li.category__elem 
-											.elem.elem_mail
+											.elem.elem_category
 												.elem__description 
 													.elem__icon
 														i(class="fa fa-envelope" aria-hidden="true")
@@ -52,7 +52,7 @@ html(lang = 'ru-RU')
 															span.elem__text.elem__text_short ЧЕ
 										
 										li.category__elem
-											.elem.elem_project
+											.elem.elem_category
 												.elem__description 
 													.elem__icon
 														i(class="fa fa-briefcase" aria-hidden="true")
@@ -63,14 +63,14 @@ html(lang = 'ru-RU')
 													+list('Конструктор отчетов', 'КО')
 
 										li.category__elem 
-											.elem.elem_tree
+											.elem.elem_category
 													.elem__description 
 														.elem__icon
 															i(class="fa fa-sitemap" aria-hidden="true")
 														p.elem__title Иерархия
 
 										li.category__elem
-											.elem.elem_data-base
+											.elem.elem_category
 												.elem__description 
 													.elem__icon
 														i(class="fa fa-database" aria-hidden="true")
@@ -84,7 +84,7 @@ html(lang = 'ru-RU')
 													+list('Выборки', 'ВЫ')
 
 										li.category__elem
-											.elem.elem_user 
+											.elem.elem_category 
 												.elem__description 
 													.elem__icon
 														i(class="fa fa-users" aria-hidden="true")
@@ -96,7 +96,7 @@ html(lang = 'ru-RU')
 													+list('Логи', 'ЛО')
 
 										li.category__elem
-											.elem.elem_analytics 
+											.elem.elem_category
 												.elem__description 
 													.elem__icon
 														i(class="fa fa-bar-chart" aria-hidden="true")
@@ -110,20 +110,21 @@ html(lang = 'ru-RU')
 						.output-info
 							
 							include tabs.pug
+							.output-info__tools
+								.tools.tools_output-info
+									.tools__wrp
+										.tools__search
+											.search
+												form.search__form(action="#")
+													input.search__input(type="text")
+													.search__icon
+														i(class="fa fa-search" aria-hidden="true")
+										.tools__btn-group
+											button.tools__btn Создать группу атрибутов
+											button.tools__btn.tools__btn_mod Создать атрибут
 
 							.output-info__content
-								.output-info__tools
-									.tools
-										.tools__wrp
-											.tools__search
-												.search
-													form.search__form(action="#")
-														input.search__input(type="text")
-														.search__icon
-															i(class="fa fa-search" aria-hidden="true")
-											.tools__btn-group
-												button.tools__btn Создать группу атрибутов
-												button.tools__btn.tools__btn_mod Создать атрибут
+								
 
 								include output.pug
 

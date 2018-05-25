@@ -1,0 +1,280 @@
+@import '../setting/reset';
+@import '../setting/font';
+@import '../setting/colors';
+
+/* -------------------- INFO ----------------- */
+.output-info {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	&__top {
+		padding: 10px 15px;
+		width: 100%;
+		display: flex;
+		background-color: $color-white;
+	}
+
+	&__tabs {
+		flex: 1 1 auto;
+	}
+
+	&__content {
+		flex: 1 1 auto;
+		overflow-y: auto;
+		margin: 10px 0 0 20px;
+		background-color: #ebeff3;
+	}
+
+	&__tree {
+		margin-top: 5px;
+		padding: 20px 0;
+		background-color: $color-white;
+	}
+}
+
+.tabs {
+	background-color: $color-white;
+	padding-bottom: 10px;
+
+	&__wrp {
+		padding-left: 10px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__title {
+		padding-right: 10px;
+		min-width: 100px;
+		text-transform: uppercase;
+		font: bold 16px $font-main;
+		color: $color-blue;
+	}
+
+	&__list {
+	 	display: flex;
+		flex-wrap: wrap; 
+	}
+
+	&__item {
+		padding: 0 20px;
+		position: relative; 
+		
+		&:not(:last-child):after {
+			content: '';
+			width: 1px;
+			position: absolute;
+			top:0;
+			right: 0;
+			bottom: 0;	
+			display: inline-block;	
+			background: black;
+		}
+	}
+
+	&__link {
+		position: relative;
+		text-decoration: none;
+		color: black;
+		
+		&:hover {
+			font-weight: bold;
+		}
+		
+		&:hover:after {
+			left: 0;
+			right: 0;
+			background-color: opacify($color-blue,.7)
+		}
+		
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 55%;
+			right: 55%;
+			bottom: -15px;
+			height: 4px;
+			background: transparentize($color-blue,1);
+			transition: all .4s;	
+		}
+	}
+}
+
+.user {
+
+	&__wrp {
+		display: flex;	
+		align-items: center;
+	}
+
+	&__icon {
+		margin-left: 10px;
+		color: $color-blue;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
+
+/* -------------------- Form -------------------- */
+
+
+.tools {
+
+	&_output-info {
+		margin: 40px 0 0 20px;
+		padding: 10px 0px 10px 15px;
+		background-color: $color-white;
+	}
+
+	&__wrp {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__search {
+		flex: 1 1 auto;
+	}
+
+	&__btn-group {
+
+	}
+
+	&__btn {
+		padding: 5px 20px;
+		font: bold 14px $font-main;
+		border-radius: 10px;
+		border: 1px solid $color-blue;
+		outline: none;
+		background: $color-white;
+		color: $color-blue;
+		transition: all .2s;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color-blue;
+			color: $color-white;
+		}
+
+		&_mod {
+			margin-left: 10px;
+			border: 1px solid #71d9c2;
+			background-color: #2dd1ac;
+			color: $color-white;
+
+			&:hover {
+				background-color: $color-white;
+				color: #2dd1ac;
+			}		
+		}
+	}
+}
+
+.search {
+	display: inline-block;
+	position: relative;
+
+	&_tools {
+		flex: 1 1 auto;
+	}
+	
+	&__input {
+		padding: 6px 30px 6px 15px;
+		width: 205px;
+		border-radius: 10px;
+		outline: none;	
+		background-color: #f7f7f7;
+	}
+
+	&__icon {
+		padding: 0; 
+		width: 18px;
+		heigth: 18px;
+		display: block;
+		border: none;
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		margin-top: -9px;
+		color: $color-blue;
+	}
+}
+
+/* -------------------- Content -------------------- */
+
+
+.tree {
+
+	&_output-info {
+		margin-top: 10px;
+		/* 	max-height: calc(100vh - 140px);
+		overflow-y: auto; */
+	}
+
+	&__list {
+		@extend %reset-list;
+	}
+
+	&__check-box {
+		height:5px;
+		width:5px;
+		position:absolute;
+		top:9px;
+		left:-2px;
+		border-top:5px solid black;
+		content:"";
+		display:block;
+	}
+
+	&__item {
+		margin: 0;
+		padding: 0 7px 2px;
+		position: relative;
+		line-height: 20px;
+		color: $color-black;
+		font-weight: bold;
+		border-left:1px solid $color-black;
+
+		&_reg:before {
+			opacity: 0;
+		}
+
+		&_reg:after {
+			opacity: 0;
+		}
+
+		&:last-child {
+			border-left:none;
+
+			&:before {
+				border-left:1px solid $color-black; 
+			}
+		}
+
+		&:before {
+			position:relative;
+			top:-0.3em;
+			left:-7px;
+			height:1em;
+			width:12px;
+			border-bottom:1px solid $color-black;
+			content:"";
+			display:inline-block;
+		}
+
+		/* &:after {
+		 	position:absolute;
+		   	top:9px;
+		   	left:-2px;
+		   	height:5px;
+		   	width:5px;
+		   	border-top:5px solid black;
+		   	content:"";
+		   	display:block;
+		} */
+	}
+
+	& ul {
+		margin-left: 10px;
+	}
+}

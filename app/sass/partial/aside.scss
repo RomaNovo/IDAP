@@ -1,0 +1,221 @@
+@import '../setting/font';
+@import '../setting/colors';
+
+.aside {
+	min-height: 100vh;
+	background-color: #fafbfa;
+	transition: width .2s;
+
+	&_main {
+		width: 40px;
+
+		&:hover {
+			width: 300px;
+		}
+
+		&:hover .logo__title {
+			display: block;
+		}
+
+		&:hover .elem__description {
+			width: 100%;
+			justify-content: start;
+			margin-left: 40px;
+		}	
+
+		&:hover .elem__title {
+			display: block;	
+		}
+
+		&:hover .elem__text {
+			margin-left: 40px;
+			display: block;		
+		}	
+
+		&:hover .elem__text_short {
+			display: none;	
+			text-align: start;	
+		}
+
+		&:hover .elem__icon {
+			margin: 0;
+			position: absolute;
+			top: 0;
+			left: -25px;		
+		}
+
+		&:hover .aside__category {
+			padding: 0;
+		}
+
+		&:hover .elem__item {
+			opacity: 1;
+		}
+
+		&:hover .elem__msg {
+			margin-left: 10px;
+			min-width: 18px;
+			min-height: 18px;
+			border-radius: 50%;
+			display: inline-block;
+			background-color: $color-white;
+			text-align: center; 
+		}
+
+		&:hover .elem__msg_out {
+			color: #f16072;
+		}
+
+		&:hover .elem__msg_inp {
+			color: $color-blue;
+		}
+
+		&:hover .elem__marker-text {
+			display: block;
+		}
+	} 		
+}
+
+.logo {
+	position: relative;
+	font: bold 18px $font-main;
+	text-transform: uppercase;
+	background-color: $color-white;
+
+		&:before {
+			content: '\f03e';
+			font-family: FontAwesome;
+			width: 20px;
+			height: 20px;
+			font-size: 20px;
+			display: inline-block;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			color: $color-blue;
+		}
+
+	&__title {
+		padding-top: 5px;
+		display: none;
+	}
+
+	&_aside {
+		padding: 5px 0 7px 40px;
+	}
+}
+
+.category {
+
+	&_aside {
+		padding-top: 20px;
+		background-color: #fafbfa;	
+	}
+
+	/* &__elem {
+		padding: 25px 0 25px; 
+		border-bottom: 1px solid $color-white;
+	}  */
+}
+
+.elem {
+	position: relative;
+
+	&_category {
+		padding: 25px 0 25px; 
+		border-bottom: 1px solid $color-white;
+	}
+
+	&__description {
+		position: relative;
+	}
+
+	&__icon {
+		margin: 0 auto;
+		width: 15px;
+		height: 15px;		
+		color: $color-blue;
+	}
+	
+	&__title {	
+		display: none;
+		text-transform: uppercase;	
+		font-weight: bold;
+		color: $color-blue;	
+	}
+	
+	&__text {
+		display: none; 
+		font: 14px $font-main;
+
+		&_short {
+			font: bold 14px $font-main;
+			display: block;
+			text-align: center;	
+			opacity: 0;
+
+			&.open {
+				opacity: 1;
+			}
+		} 
+	}
+
+	&__link {
+		text-decoration: none;
+		color: black;
+	}
+
+	&__item {
+		padding: 5px 0;
+		position: relative;
+		cursor: pointer;
+		background-color: transparentize($color-blue,1);
+
+		&:hover {
+			background-color: opacify(darken($color-blue,10%), .1);
+		}
+
+		&_active {
+			background-color: $color-white;
+			opacity: 1;	
+		}
+		
+	 	&_active:after {
+			content: '';
+			display: block;
+			width: 5px;
+			height: 100%;	
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: -1px;
+			background: $color-blue;	
+		} 
+		
+		&_mod {
+			display: flex;
+		} 
+	}
+
+	&__msg {
+		margin: 0 auto;
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 50%;		
+
+		&_out {
+			margin-left: 10px;
+			background-color: #f16072;	
+		}
+
+		&_inp {
+			margin-left: 5px;
+			background-color: $color-blue;
+		}
+	}
+
+	&__marker-text {
+		display: none;
+	}
+}

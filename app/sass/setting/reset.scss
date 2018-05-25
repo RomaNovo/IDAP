@@ -1,0 +1,25 @@
+%reset {
+	margin: 0;
+	padding: 0;
+}
+
+%reset-list {
+	@extend %reset;
+	list-style-type: none;
+}
+
+* {
+	box-sizing: border-box;
+} 
+
+body {
+	@extend %reset;
+}
+
+ul {
+	@extend %reset-list;	
+} 
+
+p {
+	@extend %reset;
+}
