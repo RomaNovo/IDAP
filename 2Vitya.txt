@@ -10,6 +10,6 @@
 давал position: relative; и позиционировал иконку из logo, хотя logo есть компонент((! за это спасибо! с таким подходом, не только в консоли удобнее смотреть правила, но и scss тоже)
 
 мое портфолио 
-http://www.romanovomodniy.ho.ua/
+<a>http://www.romanovomodniy.ho.ua/</a>
 
 
